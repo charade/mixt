@@ -1,9 +1,11 @@
 .container{
     display: flex;
     flex-direction: column;
-    text-decoration: none;
-    padding : 0;
     height : 100%;
-    width: 8rem;
-    padding-left: .4rem;
+    width: 12rem;
+    padding: 2rem .5rem;
+}
+ul{
+    list-style: none;
+    padding : 0;
 }
