@@ -1,0 +1,15 @@
+.item{
+    display: flex;
+    align-items: center;
+    margin: .5rem;
+    width : 100%;
+    font-size: 1rem;
+    font-weight: 300;
+    border-radius: .5rem;
+}
+.icon{
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
