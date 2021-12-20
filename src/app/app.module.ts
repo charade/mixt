@@ -9,6 +9,7 @@ import { SidebarItemComponent } from './sidebar-item/sidebar-item.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
 import { AvatarComponent } from './avatar/avatar.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { AvatarComponent } from './avatar/avatar.component';
     SidebarComponent,
     SidebarItemComponent,
     AvatarComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
