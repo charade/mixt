@@ -1,4 +1,8 @@
 .home-root{
     height : 100%;
-    display: flex;   
+    display: flex; 
+    flex-direction: column; 
+    background-size : cover; 
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }

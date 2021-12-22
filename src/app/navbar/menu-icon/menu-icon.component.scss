@@ -1,0 +1,21 @@
+div{
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    @media screen and (min-width : 541px) {
+        display: none;
+    }
+}
+
+span{
+    width : 70%;
+    margin : .1rem;
+    height : .2rem;
+    background: white;
+    transition: .3s linear;
+    border-radius: 5rem;
+}
