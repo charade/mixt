@@ -6,10 +6,10 @@ import * as animate from './animation';
   templateUrl: './menu-icon.component.html',
   styleUrls: ['./menu-icon.component.scss'],
   animations : [
-    animate.Parent,
-    animate.FirstLine,
-    animate.SecondLine,
-    animate.LastLine
+    animate.parent,
+    animate.firstLine,
+    animate.secondLine,
+    animate.lastLine
   ]
 })
 export class MenuIconComponent implements OnInit {
