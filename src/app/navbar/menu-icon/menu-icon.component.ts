@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as animate from './animation';
+import { SidebarService } from '../../services/sidebar-state/sidebar-state.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'menu-icon',
@@ -13,13 +15,22 @@ import * as animate from './animation';
   ]
 })
 export class MenuIconComponent implements OnInit {
-  state = 'default'
-  constructor() { }
+  state: string;
+  private active:Observable<boolean>;
+  private bool : boolean;
+  constructor(private sidebarState : SidebarService) { 
+    this.state = 'default',
+    this.active = sidebarState.getState();
+    this.bool = false
+  }
 
   ngOnInit(): void {
+   
   }
 
   onAnimate(){
-    this.state = this.state === 'active' ? 'default' : 'active'
+    this.bool = !this.bool;
+    this.state = this.bool ?'active' : 'default'
+    this.sidebarState.setState(!this.bool);
   }
 }
