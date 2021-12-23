@@ -18,6 +18,7 @@ export class MenuIconComponent implements OnInit {
   state: string;
   private active:Observable<boolean>;
   private bool : boolean;
+
   constructor(private sidebarState : SidebarService) { 
     this.state = 'default',
     this.active = sidebarState.getState();
@@ -31,6 +32,6 @@ export class MenuIconComponent implements OnInit {
   onAnimate(){
     this.bool = !this.bool;
     this.state = this.bool ?'active' : 'default'
-    this.sidebarState.setState(!this.bool);
+    this.sidebarState.setState(this.bool);
   }
 }
