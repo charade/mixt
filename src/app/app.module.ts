@@ -12,6 +12,7 @@ import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { MenuIconComponent } from './navbar/menu-icon/menu-icon.component';
 import { MainComponent } from './main/main.component';
+import { MediaQueryService } from './services/media-query/media-query.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,7 @@ import { MainComponent } from './main/main.component';
     BrowserAnimationsModule,
     MatIconModule,
   ],
-  providers: [],
+  providers: [MediaQueryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

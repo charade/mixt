@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, BehaviorSubject } from 'rxjs';
+import { Observable, BehaviorSubject, distinctUntilChanged } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +12,7 @@ export class SidebarService {
   };
 
   getState(): Observable<boolean>{
-    return this._active$.asObservable();
+    return this._active$.asObservable().pipe(distinctUntilChanged());
   }
 
   setState(state : boolean): void{

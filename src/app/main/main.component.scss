@@ -1,3 +1,12 @@
 main{
     display: flex;
+    transition: all .5s linear;
+};
+
+.main-container{
+    min-height : 100%;
+    width: 100%;
+    background : red;
+    border : 1px solid red;
+    transition : all .5s ease
 }

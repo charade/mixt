@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import * as animate from './animation';
 import { SidebarService } from '../../services/sidebar-state/sidebar-state.service';
 import { Observable } from 'rxjs';
@@ -26,10 +26,10 @@ export class MenuIconComponent implements OnInit {
   }
 
   ngOnInit(): void {
-   
   }
 
-  onAnimate(){
+  @HostListener('click')
+  onClick(){
     this.bool = !this.bool;
     this.state = this.bool ?'active' : 'default'
     this.sidebarState.setState(this.bool);
