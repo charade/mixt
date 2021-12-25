@@ -1,9 +1,14 @@
 import { Component, OnInit, HostListener, HostBinding, OnDestroy } from '@angular/core';
 import * as animate from './animation';
-import { SidebarService } from '../../services/sidebar-state/sidebar-state.service';
-import { Observable, Subscription } from 'rxjs';
+import { SidebarService, SidebarState } from '../../services/sidebar-state/sidebar-state.service';
+import { Subscription } from 'rxjs';
 import { MediaQueryService } from 'src/app/services/media-query/media-query.service';
 import { DeviceSize } from 'src/assets/device-sizes';
+
+enum Display{
+  BLOCK = 'block', 
+  NONE = 'none'
+}
 
 @Component({
   selector: 'menu-icon',
@@ -22,10 +27,10 @@ export class MenuIconComponent implements OnInit, OnDestroy {
   private bool : boolean;
   private subscription : Subscription;
 
-  @HostBinding('style.display') display: string = 'block';
+  @HostBinding('style.display') display: string = Display.BLOCK;
 
-  constructor(private sidebarState : SidebarService, private mediaQuery : MediaQueryService) { 
-    this.state = 'default',
+  constructor(private sidebarService : SidebarService, private mediaQuery : MediaQueryService) { 
+    this.state = SidebarState.DEFAULT,
     this.bool = false
     this.subscription = new Subscription()
   }
@@ -36,11 +41,11 @@ export class MenuIconComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.subscription = this.mediaQuery.matches(DeviceSize.sm).subscribe(match => {
       if(match){
-        this.state = 'default'
-        this.display = 'none'
+        this.state = SidebarState.DEFAULT
+        this.display = Display.NONE
       }
       else{
-        this.display = 'block'
+        this.display = Display.BLOCK
       }
     })
   }
@@ -52,7 +57,7 @@ export class MenuIconComponent implements OnInit, OnDestroy {
   @HostListener('click')
   onClick(){
     this.bool = !this.bool;
-    this.state = this.bool ?'active' : 'default'
-    this.sidebarState.setState(this.bool);
+    this.state = this.bool ? SidebarState.ACTIVE : SidebarState.DEFAULT
+    this.sidebarService.setState(this.bool);
   }
 }

@@ -18,6 +18,7 @@ import { AppComponent } from './app.component';
 import { BannerComponent } from './banner/banner.component';
 import { SearchbarComponent } from './searchbar/searchbar.component';
 import { IconButtonComponent } from './icon-button/icon-button.component';
+import { VolumeButtonComponent } from './volume-button/volume-button.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { IconButtonComponent } from './icon-button/icon-button.component';
     BannerComponent,
     SearchbarComponent,
     IconButtonComponent,
+    VolumeButtonComponent,
   ],
   imports: [
     BrowserModule,

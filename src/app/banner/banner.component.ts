@@ -1,4 +1,4 @@
-import { Component, OnInit, HostBinding } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { SafeUrl } from '@angular/platform-browser';
 
 @Component({
@@ -7,10 +7,8 @@ import { SafeUrl } from '@angular/platform-browser';
   styleUrls: ['./banner.component.scss']
 })
 export class BannerComponent implements OnInit {
-  @HostBinding('style.gridArea') gridArea : string;
 
   constructor() {
-      this.gridArea = 'banner'
   }
 
   ngOnInit(): void {

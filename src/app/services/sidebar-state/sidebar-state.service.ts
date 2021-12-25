@@ -21,3 +21,8 @@ export class SidebarService {
     this.activeSubjectBehavior$.next(state)
   }
 }
+
+export enum SidebarState{
+  ACTIVE = 'active',
+  DEFAULT = 'default'
+}
