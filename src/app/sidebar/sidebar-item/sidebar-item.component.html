@@ -1,1 +1,6 @@
-<li class = 'sidebar-item'><mat-icon class = 'icon'>{{ icon }}</mat-icon>{{ label }}</li>
+<li class = 'sidebar-item'>
+    <mat-icon class = 'icon' [svgIcon] = 'icon'></mat-icon>
+    <span class = 'sidebar-item-label'>
+        {{ label }}
+    </span>
+</li>
