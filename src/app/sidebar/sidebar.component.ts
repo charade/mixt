@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { SidebarService } from '../services/sidebar-state/sidebar-state.service';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { animateSidebar } from './animation';
 import { MediaQueryService } from '../services/media-query/media-query.service';
 import { DeviceSize } from 'src/assets/device-sizes';
@@ -11,16 +11,25 @@ import { DeviceSize } from 'src/assets/device-sizes';
   styleUrls: ['./sidebar.component.scss'],
   animations : [ animateSidebar ]
 })
-export class SidebarComponent implements OnInit {
+export class SidebarComponent implements OnInit, OnDestroy {
   state : string;
+  sidebarSubscription : Subscription
+  mediaQuerySubscription : Subscription
 
   constructor(private sideBarState : SidebarService, private mediaQuery : MediaQueryService) { 
     this.state = 'default';
+    this.sidebarSubscription = new Subscription();
+    this.mediaQuerySubscription = new Subscription();
   }
 
   ngOnInit(): void {
-    this.sideBarState.getState().subscribe(value => this.state = value ? 'active' : 'default')
-    this.mediaQuery.matches(DeviceSize.sm).subscribe(
-      (match : boolean) => this.state = match ? 'active' : 'default')
+    this.sidebarSubscription = this.sideBarState.getState().subscribe(value => this.state = value ? 'active' : 'default')
+    this.mediaQuerySubscription = this.mediaQuery.matches(DeviceSize.sm).subscribe(
+      (match : boolean) => this.sideBarState.setState(match))
+  }
+
+  ngOnDestroy():void {
+    this.sidebarSubscription.unsubscribe();
+    this.mediaQuerySubscription.unsubscribe()
   }
 }

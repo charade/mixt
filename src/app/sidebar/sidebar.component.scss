@@ -2,12 +2,12 @@
     display: flex;
     flex-direction: column;
     height : 100%;
-    overflow : hidden;
     & > *{
-        margin: 0 1rem;
+        margin: 0 2rem;
     };
 }
+
 ul{
-    list-style: none;
+    list-style: square white;
     padding : 0;
 }

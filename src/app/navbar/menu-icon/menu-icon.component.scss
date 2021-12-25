@@ -6,9 +6,6 @@ div{
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    @media screen and (min-width : 541px) {
-        display: none;
-    }
 }
 span{
     width : 70%;

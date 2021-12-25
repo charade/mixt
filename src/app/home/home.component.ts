@@ -7,13 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  private DEFAULT_BACKGROUND = 'url(../../assets/images/studio2.jpeg)'
-
   constructor() { }
-
-  get background():string {
-    return this.DEFAULT_BACKGROUND
-  }
 
   ngOnInit(): void {
   }

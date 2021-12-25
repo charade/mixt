@@ -1,7 +1,15 @@
-.avatar-container{
-    width : 10rem;
-    height : 10rem;
-    border : 1px solid lightgey;
+
+.avatar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width : 100%
+}
+
+.avatar {
+    width : 8rem;
+    height : 8rem;
     border-radius: 50%;
     background-color: cornflowerblue;
+    display: block;
 }

@@ -6,9 +6,12 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./sidebar-item.component.scss'],
 })
 export class SidebarItemComponent implements OnInit {
-  @Input() label ?: string ;
-  @Input() icon ?:string;
+  @Input() label : string ;
+  @Input() icon :string;
+  
   constructor() { 
+    this.icon = ''
+    this.label = ''
   }
 
   ngOnInit(): void {

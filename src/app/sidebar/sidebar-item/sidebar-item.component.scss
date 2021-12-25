@@ -3,11 +3,11 @@
     align-items: center;
     margin: 1.5rem 1rem;
     width : 100%;
-    font-size: 1rem;
-    font-weight: 300;
+    font-size: .9rem;
+    font-weight: 100;
     border-radius: .5rem;
     color : white;
-    cursor : pointer
+    cursor : pointer;
 }
 
 .icon{
@@ -15,4 +15,5 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    fill : red !important
 }
