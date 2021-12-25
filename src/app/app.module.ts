@@ -15,6 +15,9 @@ import { MenuIconComponent } from './navbar/menu-icon/menu-icon.component';
 import { MainComponent } from './main/main.component';
 
 import { AppComponent } from './app.component';
+import { BannerComponent } from './banner/banner.component';
+import { SearchbarComponent } from './searchbar/searchbar.component';
+import { IconButtonComponent } from './icon-button/icon-button.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +29,9 @@ import { AppComponent } from './app.component';
     NavbarComponent,
     MenuIconComponent,
     MainComponent,
+    BannerComponent,
+    SearchbarComponent,
+    IconButtonComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,6 +57,7 @@ export class AppModule {
     .addSvgIcon('mic', this.sanitizer.bypassSecurityTrustResourceUrl(`${this.path}/mic.svg`) )
     .addSvgIcon('playlist', this.sanitizer.bypassSecurityTrustResourceUrl(`${this.path}/playlist.svg`) )
     .addSvgIcon('settings', this.sanitizer.bypassSecurityTrustResourceUrl(`${this.path}/settings.svg`) )
+    .addSvgIcon('search', this.sanitizer.bypassSecurityTrustResourceUrl(`${this.path}/search.svg`) )
   }
  
 }

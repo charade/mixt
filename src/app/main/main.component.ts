@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostBinding } from '@angular/core';
 
 @Component({
   selector: 'app-main',
@@ -6,8 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent implements OnInit {
+  @HostBinding('style.flex') flex: number;
 
-  constructor() { }
+  constructor() {
+    this.flex = 1;
+  }
 
   ngOnInit(): void {
   }

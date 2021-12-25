@@ -1,0 +1,20 @@
+.btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width : 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background : inherit;
+    border :none;
+    box-shadow: 
+        -.4rem -1rem 1rem rgb(100, 105, 115, .4),
+        .7rem .4rem 1rem rgba(20, 23, 27, .8),
+        // inset -.4rem -.4rem .5rem rgb(100, 105, 115, .2),
+    ;
+}
+
+.btn-icon{
+    width : 45%;
+    height: 45%;
+}

@@ -1,9 +1,14 @@
 nav{
-    z-index: 2;
     height : 4rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding : 0 1rem;
-    background: transparent;
+}
+
+.searchbar-container{
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;;
+    align-items: center;
 }
