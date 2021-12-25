@@ -1,7 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener, HostBinding, OnDestroy } from '@angular/core';
 import * as animate from './animation';
-import { SidebarService } from '../../services/sidebar-state/sidebar-state.service';
-import { Observable } from 'rxjs';
+import { SidebarService, SidebarState } from '../../services/sidebar-state/sidebar-state.service';
+import { Subscription } from 'rxjs';
+import { MediaQueryService } from 'src/app/services/media-query/media-query.service';
+import { DeviceSize } from 'src/assets/device-sizes';
+
+enum Display{
+  BLOCK = 'block', 
+  NONE = 'none'
+}
 
 @Component({
   selector: 'menu-icon',
@@ -14,24 +21,43 @@ import { Observable } from 'rxjs';
     animate.lastLine
   ]
 })
-export class MenuIconComponent implements OnInit {
+export class MenuIconComponent implements OnInit, OnDestroy {
   state: string;
-  private active:Observable<boolean>;
+  
   private bool : boolean;
+  private subscription : Subscription;
 
-  constructor(private sidebarState : SidebarService) { 
-    this.state = 'default',
-    this.active = sidebarState.getState();
+  @HostBinding('style.display') display: string = Display.BLOCK;
+
+  constructor(private sidebarService : SidebarService, private mediaQuery : MediaQueryService) { 
+    this.state = SidebarState.DEFAULT,
     this.bool = false
+    this.subscription = new Subscription()
   }
-
+  /**
+   * Allow menu burger icon to appear closed
+   * when switching from table+ to mobile
+   */
   ngOnInit(): void {
-   
+    this.subscription = this.mediaQuery.matches(DeviceSize.sm).subscribe(match => {
+      if(match){
+        this.state = SidebarState.DEFAULT
+        this.display = Display.NONE
+      }
+      else{
+        this.display = Display.BLOCK
+      }
+    })
   }
 
-  onAnimate(){
+  ngOnDestroy():void{
+    this.subscription.unsubscribe()
+  }
+
+  @HostListener('click')
+  onClick(){
     this.bool = !this.bool;
-    this.state = this.bool ?'active' : 'default'
-    this.sidebarState.setState(this.bool);
+    this.state = this.bool ? SidebarState.ACTIVE : SidebarState.DEFAULT
+    this.sidebarService.setState(this.bool);
   }
 }

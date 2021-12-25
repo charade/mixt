@@ -1,21 +1,28 @@
 import { Injectable } from '@angular/core';
-import { Observable, BehaviorSubject } from 'rxjs';
+import { Observable, BehaviorSubject, distinctUntilChanged } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SidebarService {
-  private _active$ : BehaviorSubject<boolean>;
+  private activeSubjectBehavior$ : BehaviorSubject<boolean>;
+  private activeSiberObservable$ : Observable<boolean> 
 
   constructor() { 
-    this._active$ = new BehaviorSubject<boolean>(false);
+    this.activeSubjectBehavior$ = new BehaviorSubject<boolean>(false);
+    this.activeSiberObservable$ = this.activeSubjectBehavior$.asObservable()
   };
 
   getState(): Observable<boolean>{
-    return this._active$.asObservable();
+    return this.activeSiberObservable$.pipe(distinctUntilChanged());
   }
 
   setState(state : boolean): void{
-    this._active$.next(state)
+    this.activeSubjectBehavior$.next(state)
   }
+}
+
+export enum SidebarState{
+  ACTIVE = 'active',
+  DEFAULT = 'default'
 }

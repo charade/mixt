@@ -1,0 +1,50 @@
+.volume-btn-container{
+    position: absolute;
+    display: flex;
+    top : 10%;
+    left : 50%;
+    transform: translate(-50%, 0);
+    width : 8rem;
+    height : 8rem;
+    border-radius: 50%;
+    margin : 0;
+    box-shadow :  
+        -.5rem -.6rem 2rem rgba(77, 81, 90, 0.8),
+        .8rem .5rem 1rem rgba(30, 33, 37, .7),
+        // 
+        // -1rem -1rem .8rem rgba(77, 81, 90, 0.8),  
+    ;
+    @media screen and (min-width: 540px){
+        top : 50%;
+        left : 70%;
+        transform: translate(0, -50%);
+    }
+    
+    @media screen and (min-width : 768px) {
+        left : 55%;
+        width : 12rem;
+        height : 12rem;
+    }
+    @media screen and (min-width : 1024px) {
+        left : 65%;
+        width : 15rem;
+        height : 15rem;
+    }
+    @media screen and (min-width : 1025px) {
+        left : 75%;
+        width : 13rem;
+        height : 13rem;
+    }
+}
+
+.volumn-btn-dash{
+    position : absolute;
+    top : 50%;
+    left : 50%;
+    background : ivory /* aliceblue */;
+    width : .4rem;
+    height : .4rem;
+    border-radius: 50%;
+    filter: drop-shadow(0 0 .4rem lightskyblue);
+    
+}
