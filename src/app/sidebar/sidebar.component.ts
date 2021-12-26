@@ -27,12 +27,15 @@ export class SidebarComponent implements OnInit, OnDestroy {
       value => this.state = value ? SidebarState.ACTIVE : SidebarState .DEFAULT
     );
 
-    this.mediaQuerySubscription = this.mediaQuery.matches(DeviceSize.sm).subscribe(
-      (match : boolean) => this.sideBarState.setState(match))
+    this.mediaQuerySubscription = this.mediaQuery.watch().subscribe(e => {
+      const target =  <Window>e.currentTarget;
+      const screenMatch = target.matchMedia(DeviceSize.sm).matches
+      this.sideBarState.setState(screenMatch)
+    });
   }
 
   ngOnDestroy():void {
-    this.sidebarSubscription.unsubscribe();
-    this.mediaQuerySubscription.unsubscribe()
+    this.sidebarSubscription && this.sidebarSubscription.unsubscribe();
+    this.mediaQuerySubscription && this.mediaQuerySubscription.unsubscribe()
   }
 }

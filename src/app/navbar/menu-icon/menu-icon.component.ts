@@ -36,11 +36,15 @@ export class MenuIconComponent implements OnInit, OnDestroy {
   }
   /**
    * Allow menu burger icon to appear closed
-   * when switching from table+ to mobile
+   * when switching from tablet+ to mobile
+   * or on loading window from tablet+
    */
   ngOnInit(): void {
-    this.subscription = this.mediaQuery.matches(DeviceSize.sm).subscribe(match => {
-      if(match){
+    this.subscription = this.mediaQuery.watch().subscribe((e : Event) => {
+      const target = <Window>e.currentTarget;
+      const { matchMedia } = target;
+
+      if( matchMedia(DeviceSize.sm).matches ){
         this.state = SidebarState.DEFAULT
         this.display = Display.NONE
       }
@@ -51,7 +55,9 @@ export class MenuIconComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy():void{
-    this.subscription.unsubscribe()
+    if(this.subscription){
+      this.subscription.unsubscribe()
+    }
   }
 
   @HostListener('click')
