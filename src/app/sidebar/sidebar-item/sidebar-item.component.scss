@@ -1,15 +1,15 @@
 .sidebar-item{
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    margin: 1.5rem 0;
-    width : 100%;
+    margin: .4rem 0;
+    // width : 100%;
     border-radius: .5rem;
     cursor : pointer;
     @media screen and (min-width : 768px) {
-        margin : 4rem 0;
+        margin : 2rem 0;
     };
     @media screen and (min-width : 1025px) {
-        margin : 1.2rem 0;
+        margin : 1rem 0;
     };
 }
 

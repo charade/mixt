@@ -18,7 +18,8 @@ import { AppComponent } from './app.component';
 import { BannerComponent } from './banner/banner.component';
 import { SearchbarComponent } from './searchbar/searchbar.component';
 import { IconButtonComponent } from './icon-button/icon-button.component';
-import { VolumeButtonComponent } from './volume-button/volume-button.component';
+import { VolumeButtonComponent } from './banner/volume-button/volume-button.component';
+import { AudioControlsComponent } from './banner/audio-controls/audio-controls.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { VolumeButtonComponent } from './volume-button/volume-button.component';
     SearchbarComponent,
     IconButtonComponent,
     VolumeButtonComponent,
+    AudioControlsComponent,
   ],
   imports: [
     BrowserModule,
@@ -60,6 +62,9 @@ export class AppModule {
     .addSvgIcon('playlist', this.sanitizer.bypassSecurityTrustResourceUrl(`${this.path}/playlist.svg`) )
     .addSvgIcon('settings', this.sanitizer.bypassSecurityTrustResourceUrl(`${this.path}/settings.svg`) )
     .addSvgIcon('search', this.sanitizer.bypassSecurityTrustResourceUrl(`${this.path}/search.svg`) )
+    .addSvgIcon('play', this.sanitizer.bypassSecurityTrustResourceUrl(`${this.path}/play.svg`) )
+    .addSvgIcon('previous_song', this.sanitizer.bypassSecurityTrustResourceUrl(`${this.path}/previous_song.svg`) )
+    .addSvgIcon('next_song', this.sanitizer.bypassSecurityTrustResourceUrl(`${this.path}/next_song.svg`) )
   }
  
 }
