@@ -8,20 +8,19 @@ import { DeviceSize } from '../../../assets/device-sizes';
 })
 
 export class MediaQueryService {
-  change : Observable<boolean>;
-  load : Observable<boolean>;
+  private change : Observable<Event>;
+  private load : Observable<Event>;
 
   constructor() {
    this.change = new Observable();
    this.load = new Observable();
   }
 
-  matches(device : DeviceSize): Observable<boolean>{
-    const mediaQuery = window.matchMedia(device);
-    this.change =  fromEvent(mediaQuery, 'change').pipe(map(() => mediaQuery.matches), distinctUntilChanged())
-    this.load = fromEvent(window, 'load').pipe(map(() => mediaQuery.matches));
+  watch(): Observable<Event>{
+    this.change =  fromEvent(window, 'resize').pipe(distinctUntilChanged())
+    this.load = fromEvent(window, 'load');
     
-    return merge(this.change, this.load)
+    return merge(this.change, this.load);
   }
 
 }

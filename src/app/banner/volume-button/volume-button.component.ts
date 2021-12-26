@@ -13,7 +13,7 @@ export class VolumeButtonComponent implements OnInit {
 
   constructor() { 
 
-    this.radius = 80;
+    this.radius = 95;
     this.setDashesPositions();
   }
 
@@ -23,7 +23,7 @@ export class VolumeButtonComponent implements OnInit {
   
   setDashesPositions(): void{
     //angle in degrees
-    const deltaAngle = 2 / (this.dashesPositions.length);
+    const deltaAngle = 1 / (this.dashesPositions.length);
 
     this.dashesPositions.forEach((_, i) => {
       const posX = this.radius * Math.cos(deltaAngle * i);
