@@ -14,7 +14,7 @@ export class IconButtonComponent implements OnInit {
   constructor() { 
     this.icon = '';
     this.type = 'button';
-    this.iconColor = '';
+    this.iconColor = 'lightgrey';
     this.bgColor = '';
   }
 
