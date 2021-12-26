@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Colors } from 'src/assets/colors';
 
 @Component({
   selector: 'searchbar',
@@ -6,8 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./searchbar.component.scss']
 })
 export class SearchbarComponent implements OnInit {
+  submitBtnIconColor : string;
 
-  constructor() { }
+  constructor() {
+    this.submitBtnIconColor = Colors.darkYellow
+  }
 
   ngOnInit(): void {
   }
