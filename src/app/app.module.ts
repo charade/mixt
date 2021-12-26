@@ -13,7 +13,6 @@ import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { MenuIconComponent } from './navbar/menu-icon/menu-icon.component';
 import { MainComponent } from './main/main.component';
-
 import { AppComponent } from './app.component';
 import { BannerComponent } from './banner/banner.component';
 import { SearchbarComponent } from './searchbar/searchbar.component';
@@ -65,6 +64,7 @@ export class AppModule {
     .addSvgIcon('play', this.sanitizer.bypassSecurityTrustResourceUrl(`${this.path}/play.svg`) )
     .addSvgIcon('previous_song', this.sanitizer.bypassSecurityTrustResourceUrl(`${this.path}/previous_song.svg`) )
     .addSvgIcon('next_song', this.sanitizer.bypassSecurityTrustResourceUrl(`${this.path}/next_song.svg`) )
+    .addSvgIcon('pause', this.sanitizer.bypassSecurityTrustResourceUrl(`${this.path}/pause.svg`) )
   }
  
 }

@@ -9,13 +9,17 @@ import { Colors } from 'src/assets/colors';
 export class AudioControlsComponent implements OnInit {
   playBtnBg : string;
   playBtnColor : string;
-
+  playStateIcon: string;
   constructor() { 
     this.playBtnBg = Colors.orangeRed;
     this.playBtnColor = Colors.black
+    this.playStateIcon = 'play'
   }
 
-  ngOnInit(): void {
+  ngOnInit(): void{
   }
 
+  onClickPlay(): void{
+    this.playStateIcon = this.playStateIcon === 'play' ? 'pause' : 'play'
+  }
 }

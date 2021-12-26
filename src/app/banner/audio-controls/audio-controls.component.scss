@@ -36,12 +36,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    list-style: none;
     & > *{
         margin : 0 1rem
-    }
+    };
+    // border : 1px solid red;
+    width : 50%;
+    height: 58%;
+    border-radius: 1.8rem;
+    background : rgba(246, 246, 232, .02)
 }
 
 .progress-indicator{
-    background : lightslategray;
-    border-radius: 1rem;
+    background : rgb(100, 120, 122);
+    border-radius: 2rem;
 }
