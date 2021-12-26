@@ -1,7 +1,7 @@
 .form-control {
     display: flex;
     align-items : center;
-    width : 14rem;
+    width : 13rem;
     height : 3rem;
     border : 1px solid rgba(140, 193, 243, 0.3);
     border-radius: 2rem;
@@ -9,6 +9,9 @@
     padding: .5rem;
     & > * {
         margin-right  : .6rem
+    };
+    @media screen and (min-width : 360px) {
+        width : 17rem
     }
 }
 

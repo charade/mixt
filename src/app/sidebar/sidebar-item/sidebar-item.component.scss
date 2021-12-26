@@ -1,20 +1,20 @@
 .sidebar-item{
     display: flex;
     align-items: center;
-    margin: 1rem 0;
+    margin: 1.5rem 0;
     width : 100%;
     border-radius: .5rem;
     cursor : pointer;
-}
-
-.icon{
-    width : 1rem;
-    height : 1rem;
-    margin : .5rem;
-    stroke-width: .5;
+    @media screen and (min-width : 768px) {
+        margin : 4rem 0;
+    };
+    @media screen and (min-width : 1025px) {
+        margin : 1.2rem 0;
+    };
 }
 
 .sidebar-item-label{
     font-size: .8rem;
     font-weight: 100;
+    margin : .8rem
 }

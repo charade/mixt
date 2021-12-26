@@ -14,7 +14,7 @@ export const animateSidebar = trigger('animateSidebar', [
         
         query('.sidebar-item', style({ opacity : 0, transform : 'translateX(-200px)'})),
 
-        animate(100, style({ width: '12rem', opacity : 1 })),
+        animate(100, style({ width: '15rem', opacity : 1 })),
 
         query('.sidebar-item', stagger('30ms', animate('600ms ease-in', keyframes([
             style({ opacity : 0, transform : 'translateX(-200px)'}),
