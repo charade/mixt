@@ -19,6 +19,7 @@ import { SearchbarComponent } from './searchbar/searchbar.component';
 import { IconButtonComponent } from './icon-button/icon-button.component';
 import { VolumeButtonComponent } from './banner/volume-button/volume-button.component';
 import { KnobComponent } from './banner/volume-button/knob/knob.component';
+import { DashesComponent } from './banner/volume-button/dashes/dashes.component';
 import { AudioControlsComponent } from './banner/audio-controls/audio-controls.component';
 
 @NgModule({
@@ -36,7 +37,8 @@ import { AudioControlsComponent } from './banner/audio-controls/audio-controls.c
     IconButtonComponent,
     VolumeButtonComponent,
     AudioControlsComponent,
-    KnobComponent
+    KnobComponent,
+    DashesComponent
   ],
   imports: [
     BrowserModule,
