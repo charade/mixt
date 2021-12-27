@@ -9,7 +9,7 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./dashes.component.scss']
 })
 export class DashesComponent implements OnInit, OnDestroy {
-  dashesPositions  = new Array<string>(100).fill('');
+  dashesPositions  = new Array<string>(80).fill('');
   private mediaSubscription : Subscription;
   private xs_radius = 55;
   private sm_radius = 75;
@@ -25,14 +25,12 @@ export class DashesComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    
-
     this.mediaSubscription = this.mediaQuery.watch().subscribe(e => {
         const target = <Window>e.currentTarget;
   
         const match = (device : DeviceSize) => target.matchMedia(device).matches;
         if(match(DeviceSize.lg))
-          this.radius = this.lg_radius
+          this.radius = this.lg_radius;
         else if(match(DeviceSize.md))
           this.radius = this.md_radius;
         else if(match(DeviceSize.sm))
@@ -49,18 +47,18 @@ export class DashesComponent implements OnInit, OnDestroy {
   }
 
   setPositions(): void{
-    //angle in degrees
+    //angle between dashes from each other
     const deltaAngle = 9 / (this.dashesPositions.length);
 
     this.dashesPositions.forEach((_, i) => {
       const posX = this.radius * Math.cos(deltaAngle * i);
       const posY = this.radius * Math.sin(deltaAngle  * i);
+      //dash direction
       let rotate_angle = Math.atan2(posY, posX);
       //convert to degrees
-      rotate_angle = rotate_angle * (180 / Math.PI)
-      const position = `translate(${posX}px, ${posY}px) rotate(${rotate_angle}deg) `
-      this.dashesPositions.splice(i, 1, position)
-      console.log(position)
+      rotate_angle = rotate_angle * (180 / Math.PI);
+      const position = `translate(${posX}px, ${posY}px) rotate(${rotate_angle}deg)`;
+      this.dashesPositions.splice(i, 1, position);
     })
 
   }

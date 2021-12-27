@@ -21,6 +21,7 @@ import { VolumeButtonComponent } from './banner/volume-button/volume-button.comp
 import { KnobComponent } from './banner/volume-button/knob/knob.component';
 import { DashesComponent } from './banner/volume-button/dashes/dashes.component';
 import { AudioControlsComponent } from './banner/audio-controls/audio-controls.component';
+import { CircularProgressComponent } from './banner/volume-button/circular-progress/circular-progress.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { AudioControlsComponent } from './banner/audio-controls/audio-controls.c
     VolumeButtonComponent,
     AudioControlsComponent,
     KnobComponent,
-    DashesComponent
+    DashesComponent,
+    CircularProgressComponent
   ],
   imports: [
     BrowserModule,
@@ -69,6 +71,7 @@ export class AppModule {
     .addSvgIcon('previous_song', this.sanitizer.bypassSecurityTrustResourceUrl(`${this.path}/previous_song.svg`) )
     .addSvgIcon('next_song', this.sanitizer.bypassSecurityTrustResourceUrl(`${this.path}/next_song.svg`) )
     .addSvgIcon('pause', this.sanitizer.bypassSecurityTrustResourceUrl(`${this.path}/pause.svg`) )
+    .addSvgIcon('handle', this.sanitizer.bypassSecurityTrustResourceUrl(`${this.path}/handle.svg`) )
   }
  
 }
