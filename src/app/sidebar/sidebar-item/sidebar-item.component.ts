@@ -12,7 +12,7 @@ export class SidebarItemComponent implements OnInit {
   @HostBinding('style.color') textColor : string;
   @Input() button_bgColor : string;
 
-  iconColor : string;
+  @Input() iconColor : string;
 
   constructor() { 
     this.icon = '';
