@@ -21,17 +21,17 @@ svg{
     height: 100%;
     border-radius: inherit;
    
-    box-shadow: inset .2rem -.1rem 7rem rgba(23, 23, 24, 0.74);
+    // box-shadow: inset .2rem -.1rem 7rem rgba(23, 23, 24, 0.74);
 }
 
 .progress{
-    stroke: ivory;
+    stroke: rgb(193, 223, 250);
     fill : none;
     stroke-width: 18.5;
     transform-origin: center;
     transform : rotate(90deg);
     stroke-dasharray: 456;
-    stroke-dashoffset: 200;
+    stroke-dashoffset: 350/* 200 */;
     stroke-linecap: round;
 
     @media screen and (min-width : 768px) {
@@ -48,8 +48,7 @@ svg{
         transform : rotate(-45deg);
         stroke: rgb(51, 54, 59);
         stroke-dashoffset: 285;
-        // stroke-linecap:initial;
-        stroke-width: 10;
+        stroke-linecap:initial;
     }
 }
 

@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, Input } from '@angular/core';
 import { SidebarService, SidebarState } from '../services/sidebar-state/sidebar-state.service';
 import { Subscription } from 'rxjs';
 import { animateSidebar } from './animation';
