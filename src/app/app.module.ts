@@ -22,6 +22,7 @@ import { KnobComponent } from './banner/volume-button/knob/knob.component';
 import { DashesComponent } from './banner/volume-button/dashes/dashes.component';
 import { AudioControlsComponent } from './banner/audio-controls/audio-controls.component';
 import { CircularProgressComponent } from './banner/volume-button/circular-progress/circular-progress.component';
+import { RotateDirectiveDirective } from './rotate-directive.directive';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { CircularProgressComponent } from './banner/volume-button/circular-progr
     AudioControlsComponent,
     KnobComponent,
     DashesComponent,
-    CircularProgressComponent
+    CircularProgressComponent,
+    RotateDirectiveDirective
   ],
   imports: [
     BrowserModule,

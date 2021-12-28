@@ -1,13 +1,16 @@
 .volume-btn-container{
     position: absolute;
-    display: flex;
     top : 10%;
     left : 50%;
     transform: translate(-50%, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width : 9rem;
     height : 9rem;
     border-radius: 50%;
     margin : 0;
+    overflow: hidden;
     box-shadow :  
         -.5rem -.6rem 2rem rgba(77, 81, 90, 0.8),
         .8rem .5rem 1rem rgba(30, 33, 37, .7),

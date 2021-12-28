@@ -1,39 +1,19 @@
 
-:host{
-    // // width : 90%;
-    // // height : 90%;
-    // // border-radius: 50%;
-    // transform-origin: center;
-}
-.knob-container{
-    position : absolute;
-    transform-origin: center;
-    top: 50%;
-    left : 50%;
-    transform: translate(-50%, -50%);
-    width : 90%;
-    height : 90%;
-    border-radius: 50%;
-    box-shadow :  
-    inset .8rem .6rem 1rem rgba(30, 33, 37, .7),
-    inset -.5rem -1rem 7rem rgba(36, 38, 41, 0.5);
-}
+// box-shadow :  
+// inset .8rem .6rem 1rem rgba(30, 33, 37, .7),
+// inset -.5rem -1rem 7rem rgba(36, 38, 41, 0.5);
 
 .knob{
-    z-index: 4;
-    position: absolute;
-    top: 50%;
-    left: 50%;
+    border :1px solid red;
+    // transform: rotate(180deg);
     transform-origin: center;
-    transform: translate(-50%, -50%) rotate(180deg);
     border-radius: inherit;
-    width: 70%;
-    height: 70%;
-    border :1px solid lightslategray;
+    width: 50%;
+    height: 50%;
     display: flex;
     align-items:flex-start;
     justify-content: center;
-    padding: .8rem;
+    // padding: .8rem;
     box-shadow:  
         -.4rem -.4rem 1rem rgba(100, 104, 114, 0.5),
         1rem 1rem .5rem rgba(23, 24, 26, 0.5),
