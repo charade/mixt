@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'icon-button',
@@ -11,7 +11,7 @@ export class IconButtonComponent implements OnInit {
   @Input() iconColor?: string;
   @Input() bgColor?: string;
 
-  constructor() { 
+  constructor(private el: ElementRef) { 
     this.icon = '';
     this.type = 'button';
     this.iconColor = 'lightgrey';
@@ -21,4 +21,7 @@ export class IconButtonComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  get ref() : HTMLButtonElement{
+    return <HTMLButtonElement>this.el.nativeElement.firstElementChild;
+  }
 }

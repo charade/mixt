@@ -1,36 +1,59 @@
 .volume-btn-container{
-    position: absolute;
-    display: flex;
-    top : 10%;
+    position: relative;
+    top : 1rem;
     left : 50%;
-    transform: translate(-50%, 0);
-    width : 9rem;
-    height : 9rem;
-    border-radius: 50%;
+    transform: translateX(-50%) ;
+    width : 80%;
+    height : 1.5rem;
+    border-radius: 2rem;
     margin : 0;
     box-shadow :  
-        -.5rem -.6rem 2rem rgba(77, 81, 90, 0.8),
-        .8rem .5rem 1rem rgba(30, 33, 37, .7),
+        -.5rem -0.3rem .6rem rgba(73, 81, 99, 0.5),
+        .5rem .5rem .5rem rgba(30, 33, 37, .7),
     ;
-    @media screen and (min-width: 540px){
-        top : 50%;
-        left : 70%;
-        transform: translate(0, -50%);
-    }
-    
     @media screen and (min-width : 768px) {
-        left : 55%;
-        width : 12rem;
-        height : 12rem;
+        width : 50%
     }
-    @media screen and (min-width : 1024px) {
-        left : 65%;
-        width : 15rem;
-        height : 15rem;
-    }
-    @media screen and (min-width : 1025px) {
-        left : 75%;
-        width : 10rem;
-        height : 10rem;
-    }
+
+}
+
+.slider{
+    z-index :3;
+    position : absolute;
+    top : 0;
+    left : 0;
+    width : 100%;
+    height : 100%;
+    border : 1px solid red;
+    transform-origin: center;
+    opacity : 0;
+    cursor : pointer;
+  
+}
+
+.volume-slider{
+    z-index: 3;
+    position: absolute;
+    top : 50%;
+    left : 50%;
+    transform: translate(-50%, -50%);
+    border : 1px solid aliceblue;
+    border-radius: 50%;
+    cursor: grab;
+    transition: all .1s linear;
+}
+svg{
+    z-index: 2;
+    width : 100%;
+    height : 100%;
+    border-radius : 2rem;
+    position : absolute;
+    transform: rotate(180deg);
+}
+
+.progress{
+    
+    stroke : rgb(184, 85, 40);
+    stroke-width: 50;
+    stroke-dasharray: 750;
 }
