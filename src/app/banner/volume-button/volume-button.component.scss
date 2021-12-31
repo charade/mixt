@@ -4,7 +4,7 @@
     left : 50%;
     transform: translateX(-50%) ;
     width : 80%;
-    height : 1.5rem;
+    height : .4rem;
     border-radius: 2rem;
     margin : 0;
     box-shadow :  
@@ -14,9 +14,7 @@
     @media screen and (min-width : 768px) {
         width : 50%
     }
-
 }
-
 .slider{
     z-index :3;
     position : absolute;
@@ -28,9 +26,7 @@
     transform-origin: center;
     opacity : 0;
     cursor : pointer;
-  
 }
-
 .volume-slider{
     z-index: 3;
     position: absolute;
@@ -50,10 +46,7 @@ svg{
     position : absolute;
     transform: rotate(180deg);
 }
-
 .progress{
-    
     stroke : rgb(184, 85, 40);
     stroke-width: 50;
-    stroke-dasharray: 750;
 }

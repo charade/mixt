@@ -1,11 +1,17 @@
 <div class = 'volume-btn-container' >
-    <span class = 'volume-slider' seizable [slider] = "slider">
+    
+    <input type = 'range' min = "0" max = "100" class = 'slider' #slider/>
+    
+    <span class = 'volume-slider' seizable [slider] = "slider" >
         <icon-button [icon] = "'handle'" ></icon-button>
     </span>
-    <input type = 'range' min = "0" max = "750" class = 'slider' #slider/>
 
-    <svg progress [slider] = "slider">
-        <line x0 = "0" y0 = "0" x1 ="100%" y1="100%" class = 'progress'/>
+    <svg progress [slider] = "slider" [strokeDashArray] = "strokeDashArray">
+        <line 
+        x0 = "0" y0 = "0" x1 ="100%" y1="100%" 
+        class = 'progress' 
+        [ngStyle] = "{ 'stroke-dasharray' : strokeDashArray }" 
+        />
     </svg>
 
 </div>

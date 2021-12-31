@@ -21,6 +21,7 @@ import { VolumeButtonComponent } from './banner/volume-button/volume-button.comp
 import { AudioControlsComponent } from './banner/audio-controls/audio-controls.component';
 import { VolumeSliderDirective } from './banner/volume-button/directives/volume-slider.directive';
 import { VolumeProgressDirective } from './banner/volume-button/directives/volume-progress.directive';
+import { AbstractDirective } from './banner/volume-button/directives/AbstractDirective';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,7 @@ import { VolumeProgressDirective } from './banner/volume-button/directives/volum
     VolumeButtonComponent,
     AudioControlsComponent,
     VolumeSliderDirective,
-    VolumeProgressDirective 
+    VolumeProgressDirective
   ],
   imports: [
     BrowserModule,
